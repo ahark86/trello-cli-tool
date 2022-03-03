@@ -1,8 +1,8 @@
 import requests
-import secrets
+import t_secrets
 
-TRELLO_KEY = secrets.TRELLO_KEY
-TRELLO_TOKEN = secrets.TRELLO_TOKEN
+TRELLO_KEY = t_secrets.TRELLO_KEY
+TRELLO_TOKEN = t_secrets.TRELLO_TOKEN
 
 headers = {"Accept": "application/json"}
 data = {"key": TRELLO_KEY, "token": TRELLO_TOKEN}
