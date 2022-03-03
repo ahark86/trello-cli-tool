@@ -1,4 +1,3 @@
-import trello as t
 import os
 clear = lambda: os.system('clear')
 
@@ -9,6 +8,17 @@ help_block = "\nTrello CLI Tool\n\n" \
 
 def run():
     clear()
+    if not os.path.exists('secrets.py'):
+        t_key = ""
+        t_token = ""
+        while len(t_key) < 1 or len(t_token) < 1:
+            print("\n")
+            t_key = input("Enter Trello API key: ")
+            t_token = input("Enter Trello API token: ")
+        with open('secrets.py', 'w') as f:
+            f.write(f'TRELLO_KEY = \"{t_key}\"\n'
+                    f'TRELLO_TOKEN = \"{t_token}\"')
+    import trello as t
     while True:
         b_name = ""
         print(help_block)
