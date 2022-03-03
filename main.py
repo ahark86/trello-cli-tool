@@ -1,4 +1,5 @@
 import os
+import secrets
 clear = lambda: os.system('clear')
 
 help_block = "\nTrello CLI Tool\n\n" \
@@ -8,7 +9,7 @@ help_block = "\nTrello CLI Tool\n\n" \
 
 def run():
     clear()
-    if not os.path.exists('secrets.py'):
+    if secrets.TRELLO_KEY == "":
         t_key = ""
         t_token = ""
         while len(t_key) < 1 or len(t_token) < 1:
@@ -20,10 +21,10 @@ def run():
                     f'TRELLO_TOKEN = \"{t_token}\"')
     import trello as t
     while True:
-        b_name = ""
         print(help_block)
         user_input = input("> ")
         if user_input.lower() == "create-board":
+            b_name = ""
             while len(b_name) == 0:
                 b_name = input("Enter name for new board (Required): ")
             b_desc = input("Enter description for new board (optional): ")
