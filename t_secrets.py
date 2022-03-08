@@ -7,7 +7,7 @@ home_path = Path.home()
 if os.path.exists(f'{home_path}/t_secrets.txt'):
     with open(f'{home_path}/t_secrets.txt', 'r') as f:
         secret_values = f.readlines()
-        TRELLO_KEY = secret_values[0]
+        TRELLO_KEY = secret_values[0].strip()
         TRELLO_TOKEN = secret_values[1]
 else:
     t_key = ""

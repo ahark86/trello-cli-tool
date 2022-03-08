@@ -63,7 +63,7 @@ def create_board_from_template(board_name, board_desc=""):
         "name": board_name,
         "desc": board_desc,
         "idBoardSource": template_board_id,
-        "idOrganization": workspace_name,
+        "idOrganization": workspace_id,
         "keepFromSource": "cards",
     }
 
