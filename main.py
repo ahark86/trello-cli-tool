@@ -7,8 +7,8 @@ clear = lambda: os.system('clear')
 title = "\nTrello CLI Tool"
 help_block = "\nAvailable Commands:\n\n" \
              "create-board (Creates new board based on a specific existing template)\n" \
-             "get-user-id (Enter username, Trello user ID is returned)\n" \
-             "reveal-secrets (Displays Trello API Key and API Token)\n"
+             # "get-user-id (Enter username, Trello user ID is returned)\n" \
+             # "reveal-secrets (Displays Trello API Key and API Token)\n"
 
 
 def run():
