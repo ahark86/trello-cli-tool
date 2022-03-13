@@ -1,8 +1,10 @@
 from pathlib import Path
 import os
+import platform
 clear = lambda: os.system('clear')
 
-clear()
+if platform.system() == 'Darwin' or platform.system() == 'Linux':
+    clear()
 home_path = Path.home()
 if os.path.exists(f'{home_path}/t_secrets.txt'):
     with open(f'{home_path}/t_secrets.txt', 'r') as f:

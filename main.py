@@ -1,4 +1,5 @@
 import os
+import platform
 import t_secrets
 import trello as t
 clear = lambda: os.system('clear')
@@ -11,7 +12,8 @@ help_block = "\nAvailable Commands:\n\n" \
 
 
 def run():
-    clear()
+    if platform.system() == 'Darwin' or platform.system() == 'Linux':
+        clear()
     print(title)
     while True:
         print(help_block)
